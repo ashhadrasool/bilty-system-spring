@@ -11,17 +11,22 @@ public class Bilty extends BaseEntity  {
     private long biltyid;
     private String msno;
 
-    @JoinColumn(name = "fromId", referencedColumnName = "codeid")
+    @OneToOne
+    @PrimaryKeyJoinColumn(name="from_id", referencedColumnName="code_id")
     private Code fromCode;
-    @JoinColumn(name = "toId", referencedColumnName = "codeid")
+    @OneToOne
+    @PrimaryKeyJoinColumn(name="to_id", referencedColumnName="code_id")
     private Code toCode;
-    @JoinColumn(name = "senderId", referencedColumnName = "codeid")
+    @OneToOne
+    @PrimaryKeyJoinColumn(name="sender_id", referencedColumnName="code_id")
     private Code senderCode;
+    @OneToOne
+    @PrimaryKeyJoinColumn(name="material_id", referencedColumnName="code_id")
+    private Code materialCode;
     private String pono;
     private String containerno;
     private String vehicleno;
-    @JoinColumn(name = "materialId", referencedColumnName = "codeid")
-    private Code materialCode;
+
     private float weight;
     private int dieselamount;
     private int advanceamount;
@@ -106,6 +111,12 @@ public class Bilty extends BaseEntity  {
     public void setSender(Code sender) {
         this.senderCode = sender;
     }
+    public Code getMaterialCode() {
+        return materialCode;
+    }
+    public void setMaterialCode(Code materialCode) {
+        this.materialCode = materialCode;
+    }
 
     public String getPono() {
         return pono;
@@ -155,12 +166,5 @@ public class Bilty extends BaseEntity  {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public Code getMaterialCode() {
-        return materialCode;
-    }
-    public void setMaterialCode(Code materialCode) {
-        this.materialCode = materialCode;
     }
 }
