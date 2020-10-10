@@ -1,0 +1,851 @@
+2020-06-21 17:27:00,546 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 23132 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:27:00,551 The following profiles are active: base
+2020-06-21 17:27:01,739 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:27:01,822 Finished Spring Data repository scanning in 70ms. Found 1 JPA repository interfaces.
+2020-06-21 17:27:03,361 Tomcat initialized with port(s): 8081 (http)
+2020-06-21 17:27:03,374 Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-21 17:27:03,378 Starting service [Tomcat]
+2020-06-21 17:27:03,378 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:27:03,583 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:27:03,583 Root WebApplicationContext: initialization completed in 2926 ms
+2020-06-21 17:27:04,089 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:27:04,206 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:27:04,396 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:27:04,465 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:27:04,877 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:27:05,231 
+
+Using generated security password: 4bb9a4f3-04ef-4e8e-86f6-addae7302ca4
+
+2020-06-21 17:27:05,256 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:27:05,514 Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5db948c9, org.springframework.security.web.context.SecurityContextPersistenceFilter@14fc9bd, org.springframework.security.web.header.HeaderWriterFilter@670342a2, org.springframework.security.web.csrf.CsrfFilter@646427f7, org.springframework.security.web.authentication.logout.LogoutFilter@790d8fdd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7fef0b40, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@21390938, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@296edc75, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@78c262ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1cd6b1bd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67e0fd6d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@357c9bd9, org.springframework.security.web.session.SessionManagementFilter@7742a45c, org.springframework.security.web.access.ExceptionTranslationFilter@61037caf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@474749b8]
+2020-06-21 17:27:05,568 Starting ProtocolHandler ["http-nio-8081"]
+2020-06-21 17:27:05,621 Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-21 17:27:05,624 Triggering deferred initialization of Spring Data repositories…
+2020-06-21 17:27:06,661 HikariPool-1 - Starting...
+2020-06-21 17:27:06,922 HikariPool-1 - Start completed.
+2020-06-21 17:27:07,011 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "id" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 17:27:07,017 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:27:07,033 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:27:07,705 Spring Data repositories initialized!
+2020-06-21 17:27:07,715 Started BiltysystemApplication in 8.099 seconds (JVM running for 9.001)
+2020-06-21 17:29:25,395 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-21 17:29:25,396 Initializing Servlet 'dispatcherServlet'
+2020-06-21 17:29:25,413 Completed initialization in 17 ms
+2020-06-21 17:30:04,499 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:30:04,502 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:30:04,502 HikariPool-1 - Shutdown initiated...
+2020-06-21 17:30:04,684 HikariPool-1 - Shutdown completed.
+2020-06-21 17:30:09,086 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 11192 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:30:09,091 The following profiles are active: base
+2020-06-21 17:30:10,528 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:30:10,637 Finished Spring Data repository scanning in 87ms. Found 1 JPA repository interfaces.
+2020-06-21 17:30:12,223 Tomcat initialized with port(s): 8081 (http)
+2020-06-21 17:30:12,248 Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-21 17:30:12,250 Starting service [Tomcat]
+2020-06-21 17:30:12,251 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:30:12,451 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:30:12,451 Root WebApplicationContext: initialization completed in 3259 ms
+2020-06-21 17:30:12,849 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:30:12,932 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:30:13,102 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:30:13,185 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:30:13,599 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:30:13,931 
+
+Using generated security password: f9c5c94a-4118-47d4-9902-429f0abdc115
+
+2020-06-21 17:30:13,932 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:30:14,166 Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d9618f2, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f2c57fe, org.springframework.security.web.header.HeaderWriterFilter@6db328f8, org.springframework.security.web.csrf.CsrfFilter@1cd6b1bd, org.springframework.security.web.authentication.logout.LogoutFilter@47df5041, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@339f3a55, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@559af296, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7c7e73c5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@685f5d0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@101cf747, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a090f62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13cc0b90, org.springframework.security.web.session.SessionManagementFilter@61b65d54, org.springframework.security.web.access.ExceptionTranslationFilter@6839203b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7aea704c]
+2020-06-21 17:30:14,230 Starting ProtocolHandler ["http-nio-8081"]
+2020-06-21 17:30:14,283 Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-21 17:30:14,288 Triggering deferred initialization of Spring Data repositories…
+2020-06-21 17:30:15,485 HikariPool-1 - Starting...
+2020-06-21 17:30:15,771 HikariPool-1 - Start completed.
+2020-06-21 17:30:15,859 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "id" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 17:30:15,861 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:30:15,882 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:30:16,490 Spring Data repositories initialized!
+2020-06-21 17:30:16,504 Started BiltysystemApplication in 8.462 seconds (JVM running for 9.314)
+2020-06-21 17:30:59,296 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:30:59,299 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:30:59,300 HikariPool-1 - Shutdown initiated...
+2020-06-21 17:30:59,313 HikariPool-1 - Shutdown completed.
+2020-06-21 17:31:09,174 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 12096 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:31:09,180 The following profiles are active: base
+2020-06-21 17:31:10,645 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:31:10,751 Finished Spring Data repository scanning in 85ms. Found 1 JPA repository interfaces.
+2020-06-21 17:31:12,608 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 17:31:12,628 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:31:12,630 Starting service [Tomcat]
+2020-06-21 17:31:12,630 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:31:12,837 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:31:12,837 Root WebApplicationContext: initialization completed in 3515 ms
+2020-06-21 17:31:13,232 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:31:13,343 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:31:13,525 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:31:13,588 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:31:13,971 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:31:14,332 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:31:14,505 
+
+Using generated security password: ea7e1104-ba26-47f6-8e8f-6e424c19888c
+
+2020-06-21 17:31:14,905 Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@357c9bd9, org.springframework.security.web.context.SecurityContextPersistenceFilter@1cd6b1bd, org.springframework.security.web.header.HeaderWriterFilter@7742a45c, org.springframework.security.web.csrf.CsrfFilter@380ce5a3, org.springframework.security.web.authentication.logout.LogoutFilter@3dbd7107, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19f02280, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1a531422, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7aea704c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@329dc214, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b41e1bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1129829c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d0290d8, org.springframework.security.web.session.SessionManagementFilter@14fc9bd, org.springframework.security.web.access.ExceptionTranslationFilter@670342a2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@29013ef2]
+2020-06-21 17:31:14,962 Starting ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:31:15,024 Tomcat started on port(s): 8082 (http) with context path ''
+2020-06-21 17:31:15,029 Triggering deferred initialization of Spring Data repositories…
+2020-06-21 17:31:16,189 HikariPool-1 - Starting...
+2020-06-21 17:31:16,401 HikariPool-1 - Start completed.
+2020-06-21 17:31:16,489 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "id" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 17:31:16,491 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:31:16,501 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:31:17,423 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-21 17:31:17,426 Initializing Servlet 'dispatcherServlet'
+2020-06-21 17:31:17,453 Completed initialization in 26 ms
+2020-06-21 17:31:17,531 Spring Data repositories initialized!
+2020-06-21 17:31:17,550 Started BiltysystemApplication in 9.392 seconds (JVM running for 10.376)
+2020-06-21 17:36:45,701 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:36:45,704 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:36:45,704 HikariPool-1 - Shutdown initiated...
+2020-06-21 17:36:45,711 HikariPool-1 - Shutdown completed.
+2020-06-21 17:38:11,675 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 13384 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:38:11,678 The following profiles are active: base
+2020-06-21 17:38:13,315 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:38:13,441 Finished Spring Data repository scanning in 107ms. Found 1 JPA repository interfaces.
+2020-06-21 17:38:16,943 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 17:38:17,006 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:38:17,012 Starting service [Tomcat]
+2020-06-21 17:38:17,013 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:38:17,445 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:38:17,446 Root WebApplicationContext: initialization completed in 5641 ms
+2020-06-21 17:38:18,094 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:38:18,279 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:38:18,537 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:38:18,671 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:38:19,506 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:38:20,043 
+
+Using generated security password: 69aa9ee9-3706-4ebe-a44a-281eb96f1a94
+
+2020-06-21 17:38:20,233 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:38:20,638 Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@102c18e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d2c9361, org.springframework.security.web.header.HeaderWriterFilter@c412556, org.springframework.security.web.csrf.CsrfFilter@30a9e3db, org.springframework.security.web.authentication.logout.LogoutFilter@784d9bc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a296107, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@32507479, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@26e0d39c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@764a3e5d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fbe70d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d0290d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65eb3597, org.springframework.security.web.session.SessionManagementFilter@450f0235, org.springframework.security.web.access.ExceptionTranslationFilter@cc9ef8d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d3691e1]
+2020-06-21 17:38:20,726 Starting ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:38:20,881 Tomcat started on port(s): 8082 (http) with context path ''
+2020-06-21 17:38:20,888 Triggering deferred initialization of Spring Data repositories…
+2020-06-21 17:38:22,898 HikariPool-1 - Starting...
+2020-06-21 17:38:23,231 HikariPool-1 - Start completed.
+2020-06-21 17:38:23,344 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:38:23,378 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:38:24,391 Spring Data repositories initialized!
+2020-06-21 17:38:24,409 Started BiltysystemApplication in 13.796 seconds (JVM running for 14.822)
+2020-06-21 17:38:31,615 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-21 17:38:31,616 Initializing Servlet 'dispatcherServlet'
+2020-06-21 17:38:31,642 Completed initialization in 26 ms
+2020-06-21 17:44:17,355 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:44:17,362 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:44:17,363 HikariPool-1 - Shutdown initiated...
+2020-06-21 17:44:17,569 HikariPool-1 - Shutdown completed.
+2020-06-21 17:44:27,571 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 1988 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:44:27,577 The following profiles are active: base
+2020-06-21 17:44:29,027 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:44:29,135 Finished Spring Data repository scanning in 91ms. Found 1 JPA repository interfaces.
+2020-06-21 17:44:31,280 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5f038248' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:44:31,321 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:44:32,708 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 17:44:32,757 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:44:32,762 Starting service [Tomcat]
+2020-06-21 17:44:32,763 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:44:33,063 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:44:33,064 Root WebApplicationContext: initialization completed in 5360 ms
+2020-06-21 17:44:33,753 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:44:33,909 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:44:34,093 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:44:34,182 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.core.userdetails.UserDetailsService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 17:44:34,182 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:44:34,286 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:44:34,910 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:44:35,366 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:44:38,497 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:44:38,541 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:44:38,557 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:44:38,573 Stopping service [Tomcat]
+2020-06-21 17:44:38,610 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 17:44:39,080 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customUserDetailsService in com.enterprises.mengal.biltysystem.config.WebSecurityConfig required a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'inMemoryUserDetailsManager' in 'UserDetailsServiceAutoConfiguration' not loaded because @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManagerBean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' in your configuration.
+
+2020-06-21 17:44:48,721 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 4228 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:44:48,728 The following profiles are active: base
+2020-06-21 17:44:50,464 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:44:50,611 Finished Spring Data repository scanning in 121ms. Found 1 JPA repository interfaces.
+2020-06-21 17:44:52,782 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@352c44a8' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:44:52,797 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:44:54,214 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 17:44:54,255 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:44:54,258 Starting service [Tomcat]
+2020-06-21 17:44:54,258 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:44:54,554 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:44:54,555 Root WebApplicationContext: initialization completed in 5700 ms
+2020-06-21 17:44:55,190 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:44:55,339 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:44:55,502 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:44:55,597 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.core.userdetails.UserDetailsService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 17:44:55,598 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:44:55,637 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:44:56,132 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:44:56,654 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:44:59,491 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:44:59,525 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:44:59,538 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:44:59,546 Stopping service [Tomcat]
+2020-06-21 17:44:59,575 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 17:44:59,823 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customUserDetailsService in com.enterprises.mengal.biltysystem.config.WebSecurityConfig required a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'inMemoryUserDetailsManager' in 'UserDetailsServiceAutoConfiguration' not loaded because @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManagerBean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' in your configuration.
+
+2020-06-21 17:45:16,114 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 1184 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:45:16,124 The following profiles are active: base
+2020-06-21 17:45:17,817 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:45:17,953 Finished Spring Data repository scanning in 115ms. Found 1 JPA repository interfaces.
+2020-06-21 17:45:19,826 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59ed3e6c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:45:19,860 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:45:21,335 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 17:45:21,374 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:45:21,378 Starting service [Tomcat]
+2020-06-21 17:45:21,379 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:45:21,749 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:45:21,749 Root WebApplicationContext: initialization completed in 5520 ms
+2020-06-21 17:45:22,451 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:45:22,679 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:45:23,002 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:45:23,101 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.core.userdetails.UserDetailsService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 17:45:23,102 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:45:23,176 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:45:23,761 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:45:24,610 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:45:27,541 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:45:27,588 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:45:27,607 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:45:27,619 Stopping service [Tomcat]
+2020-06-21 17:45:27,652 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 17:45:27,926 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customUserDetailsService in com.enterprises.mengal.biltysystem.config.WebSecurityConfig required a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'inMemoryUserDetailsManager' in 'UserDetailsServiceAutoConfiguration' not loaded because @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManagerBean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' in your configuration.
+
+2020-06-21 17:47:13,474 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 14652 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 17:47:13,482 The following profiles are active: base
+2020-06-21 17:47:15,192 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 17:47:15,356 Finished Spring Data repository scanning in 147ms. Found 1 JPA repository interfaces.
+2020-06-21 17:47:17,217 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@508a65bf' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:47:17,233 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 17:47:18,616 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 17:47:18,655 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 17:47:18,658 Starting service [Tomcat]
+2020-06-21 17:47:18,659 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 17:47:18,961 Initializing Spring embedded WebApplicationContext
+2020-06-21 17:47:18,962 Root WebApplicationContext: initialization completed in 5383 ms
+2020-06-21 17:47:19,540 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:47:19,699 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 17:47:19,863 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 17:47:19,951 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.core.userdetails.UserDetailsService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 17:47:19,951 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:47:20,001 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 17:47:20,490 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 17:47:20,966 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 17:47:23,377 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 17:47:23,409 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 17:47:23,421 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 17:47:23,428 Stopping service [Tomcat]
+2020-06-21 17:47:23,449 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 17:47:23,711 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customUserDetailsService in com.enterprises.mengal.biltysystem.config.WebSecurityConfig required a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'inMemoryUserDetailsManager' in 'UserDetailsServiceAutoConfiguration' not loaded because @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManagerBean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' in your configuration.
+
+2020-06-21 18:25:36,758 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 22508 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 18:25:36,763 The following profiles are active: base
+2020-06-21 18:25:38,449 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 18:25:38,642 Finished Spring Data repository scanning in 172ms. Found 1 JPA repository interfaces.
+2020-06-21 18:25:39,563 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@73fb1d7f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:25:39,574 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:25:40,870 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 18:25:40,887 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 18:25:40,888 Starting service [Tomcat]
+2020-06-21 18:25:40,889 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:25:41,098 Initializing Spring embedded WebApplicationContext
+2020-06-21 18:25:41,099 Root WebApplicationContext: initialization completed in 4237 ms
+2020-06-21 18:25:41,598 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:25:41,727 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 18:25:41,931 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 18:25:42,000 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 18:25:42,037 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 18:25:42,038 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:25:42,418 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 18:25:42,762 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 18:25:44,275 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "id" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 18:25:44,295 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 18:25:44,319 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:25:44,331 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:25:44,336 Stopping service [Tomcat]
+2020-06-21 18:25:44,357 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 18:25:44,636 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.enterprises.mengal.biltysystem.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2020-06-21 18:27:45,613 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 22004 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 18:27:45,616 The following profiles are active: base
+2020-06-21 18:27:47,412 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 18:27:47,568 Finished Spring Data repository scanning in 136ms. Found 1 JPA repository interfaces.
+2020-06-21 18:27:48,678 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5b3a7ef5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:27:48,695 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:27:50,047 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 18:27:50,076 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 18:27:50,078 Starting service [Tomcat]
+2020-06-21 18:27:50,078 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:27:50,346 Initializing Spring embedded WebApplicationContext
+2020-06-21 18:27:50,347 Root WebApplicationContext: initialization completed in 4593 ms
+2020-06-21 18:27:50,854 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:27:50,969 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 18:27:51,161 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 18:27:51,228 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 18:27:51,275 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 18:27:51,276 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:27:51,675 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 18:27:52,029 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 18:27:53,618 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "id" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 18:27:53,621 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 18:27:53,639 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:27:53,651 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:27:53,658 Stopping service [Tomcat]
+2020-06-21 18:27:53,689 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 18:27:54,050 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.enterprises.mengal.biltysystem.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2020-06-21 18:41:15,220 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 12532 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 18:41:15,224 The following profiles are active: base
+2020-06-21 18:41:16,850 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 18:41:16,992 Finished Spring Data repository scanning in 128ms. Found 1 JPA repository interfaces.
+2020-06-21 18:41:17,855 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10c72a6f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:41:17,870 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:41:19,099 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 18:41:19,124 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 18:41:19,125 Starting service [Tomcat]
+2020-06-21 18:41:19,126 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:41:19,363 Initializing Spring embedded WebApplicationContext
+2020-06-21 18:41:19,364 Root WebApplicationContext: initialization completed in 3996 ms
+2020-06-21 18:41:19,829 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:41:19,960 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 18:41:20,119 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 18:41:20,221 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 18:41:20,222 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:41:20,227 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 18:41:20,643 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 18:41:21,022 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 18:41:22,890 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column id int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "id" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 18:41:22,893 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 18:41:22,915 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:41:22,927 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:41:22,932 Stopping service [Tomcat]
+2020-06-21 18:41:22,954 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 18:41:23,298 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.enterprises.mengal.biltysystem.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2020-06-21 18:43:09,131 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 8940 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 18:43:09,135 The following profiles are active: base
+2020-06-21 18:43:10,886 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 18:43:11,005 Finished Spring Data repository scanning in 104ms. Found 1 JPA repository interfaces.
+2020-06-21 18:43:12,087 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@65c33b92' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:43:12,103 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:43:13,131 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 18:43:13,144 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 18:43:13,145 Starting service [Tomcat]
+2020-06-21 18:43:13,146 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:43:13,378 Initializing Spring embedded WebApplicationContext
+2020-06-21 18:43:13,378 Root WebApplicationContext: initialization completed in 4115 ms
+2020-06-21 18:43:13,747 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:43:13,858 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 18:43:14,048 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 18:43:14,087 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 18:43:14,119 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 18:43:14,120 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:43:14,427 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 18:43:14,712 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 18:43:16,457 GenerationTarget encountered exception accepting command : Error executing DDL "alter table public.code add column userid int8 not null" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table public.code add column userid int8 not null" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:297)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:75)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "userid" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:268)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+2020-06-21 18:43:16,459 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 18:43:16,473 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:43:16,481 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:43:16,486 Stopping service [Tomcat]
+2020-06-21 18:43:16,510 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 18:43:16,840 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.enterprises.mengal.biltysystem.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2020-06-21 18:44:04,764 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 14576 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 18:44:04,771 The following profiles are active: base
+2020-06-21 18:44:06,496 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 18:44:06,646 Finished Spring Data repository scanning in 129ms. Found 1 JPA repository interfaces.
+2020-06-21 18:44:07,706 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2123064f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:44:07,716 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:44:08,645 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 18:44:08,668 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 18:44:08,669 Starting service [Tomcat]
+2020-06-21 18:44:08,670 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:44:08,841 Initializing Spring embedded WebApplicationContext
+2020-06-21 18:44:08,842 Root WebApplicationContext: initialization completed in 3942 ms
+2020-06-21 18:44:09,197 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:44:09,321 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 18:44:09,508 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 18:44:09,602 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 18:44:09,612 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 18:44:09,612 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:44:09,914 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 18:44:10,176 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 18:44:11,921 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 18:44:11,946 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:44:11,959 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:44:11,964 Stopping service [Tomcat]
+2020-06-21 18:44:11,986 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 18:44:12,194 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.enterprises.mengal.biltysystem.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2020-06-21 18:45:53,331 Starting BiltysystemApplication on DESKTOP-ITDU37C with PID 23516 (C:\Users\Ashhad\Downloads\biltysystem\biltysystem\target\classes started by Ashhad in C:\Users\Ashhad\Downloads\biltysystem\biltysystem)
+2020-06-21 18:45:53,337 The following profiles are active: base
+2020-06-21 18:45:55,015 Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-21 18:45:55,141 Finished Spring Data repository scanning in 113ms. Found 1 JPA repository interfaces.
+2020-06-21 18:45:56,245 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@cf518cf' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:45:56,259 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-21 18:45:57,334 Tomcat initialized with port(s): 8082 (http)
+2020-06-21 18:45:57,351 Initializing ProtocolHandler ["http-nio-8082"]
+2020-06-21 18:45:57,352 Starting service [Tomcat]
+2020-06-21 18:45:57,353 Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:45:57,531 Initializing Spring embedded WebApplicationContext
+2020-06-21 18:45:57,531 Root WebApplicationContext: initialization completed in 4057 ms
+2020-06-21 18:45:57,918 Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:45:58,025 HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-21 18:45:58,162 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-21 18:45:58,245 HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-21 18:45:58,254 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'OAuth2ServerConfiguration.AuthorizationServerConfig': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-21 18:45:58,255 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:45:58,659 HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-21 18:45:59,072 HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-21 18:46:00,612 HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-21 18:46:00,624 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-21 18:46:00,633 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:46:00,637 Stopping service [Tomcat]
+2020-06-21 18:46:00,656 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-21 18:46:00,906 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.enterprises.mengal.biltysystem.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
