@@ -11,18 +11,21 @@ public class Bilty extends BaseEntity  {
     private long biltyid;
     private String msno;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn(name="from_id", referencedColumnName="code_id")
+    @ManyToOne
+    @JoinColumn(name="fromid", referencedColumnName="codeid")
     private Code fromCode;
-    @OneToOne
-    @PrimaryKeyJoinColumn(name="to_id", referencedColumnName="code_id")
+    @ManyToOne
+    @JoinColumn(name="toid", referencedColumnName="codeid")
     private Code toCode;
-    @OneToOne
-    @PrimaryKeyJoinColumn(name="sender_id", referencedColumnName="code_id")
+    @ManyToOne
+    @JoinColumn(name="senderid", referencedColumnName="codeid")
     private Code senderCode;
-    @OneToOne
-    @PrimaryKeyJoinColumn(name="material_id", referencedColumnName="code_id")
+    @ManyToOne
+    @JoinColumn(name="materialid", referencedColumnName="codeid")
     private Code materialCode;
+    @ManyToOne
+    @JoinColumn(name="statusid", referencedColumnName="codeid")
+    private Code statusCode;
     private String pono;
     private String containerno;
     private String vehicleno;
@@ -32,7 +35,6 @@ public class Bilty extends BaseEntity  {
     private int advanceamount;
     private String drivername;
     private String drivermobileno;
-    private long statusCode;
     private boolean verified;
     private Date date;
 
@@ -64,11 +66,11 @@ public class Bilty extends BaseEntity  {
         return dieselamount;
     }
 
-    public void setStatusid(long statusid) {
-        this.statusCode = statusid;
+    public void setStatus(Code status) {
+        this.statusCode = status;
     }
 
-    public long getStatusid() {
+    public Code getStatus() {
         return statusCode;
     }
 
@@ -111,10 +113,11 @@ public class Bilty extends BaseEntity  {
     public void setSender(Code sender) {
         this.senderCode = sender;
     }
-    public Code getMaterialCode() {
+
+    public Code getMaterial() {
         return materialCode;
     }
-    public void setMaterialCode(Code materialCode) {
+    public void setMaterial(Code materialCode) {
         this.materialCode = materialCode;
     }
 
@@ -149,7 +152,7 @@ public class Bilty extends BaseEntity  {
     public int getDieselAmount() {
         return dieselamount;
     }
-    public void setDiesel(int dieselamount) {
+    public void setDieselAmount(int dieselamount) {
         this.dieselamount = dieselamount;
     }
 

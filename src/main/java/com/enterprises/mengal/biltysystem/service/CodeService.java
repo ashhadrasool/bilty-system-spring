@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CodeService {
@@ -19,6 +20,12 @@ public class CodeService {
         message.setData(codeRepository.findAllByType(type));
         return message;
     }
+
+    public Code getCodeById(long id){
+        Optional<Code> c=  codeRepository.findById(id);
+        return c.get();
+    }
+
     public Message<List<Code>> getAllCodes(){
         Message message = new Message();
         message.setData(codeRepository.findAll());
