@@ -2,13 +2,19 @@ package com.enterprises.mengal.biltysystem.service;
 
 import com.enterprises.mengal.biltysystem.dto.bilty.CreateBiltyDTO;
 import com.enterprises.mengal.biltysystem.model.Bilty;
-import com.enterprises.mengal.biltysystem.model.Code;
 import com.enterprises.mengal.biltysystem.repository.BiltyRepo;
-import com.enterprises.mengal.biltysystem.util.Message;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class BiltyService {
@@ -19,20 +25,30 @@ public class BiltyService {
     @Autowired
     private CodeService codeService;
 
-    public Message<List<Bilty>> getAllBiltyEntries(){
-        Message message = new Message();
-        message.setData(biltyRepo.findAll());
-        return message;
-
-    }public Message<List<Bilty>> getAllBiltyEntries(long id){
-        Message message = new Message();
-        message.setData(biltyRepo.findAllByBiltyid(id));
-        return message;
+    public Page<Bilty> getAll(Pageable pageable){
+        return biltyRepo.findAll(pageable);
     }
 
-    public Message<Bilty> create(CreateBiltyDTO createBiltyDTO){
+    public List<Bilty> getAllBetweenDates(String startDate, String endDate){
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date sdate = formatter.parse(startDate);
+            Date edate = formatter.parse(endDate);
+            return biltyRepo.findByDateGreaterThanEqualAndDateLessThanEqual(sdate, edate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    public Bilty getBiltyById(long id){
+        return biltyRepo.findOneByBiltyId(id);
+    }
+
+    public Bilty create(CreateBiltyDTO createBiltyDTO){
         //b.setVerified(false);
-        Message message = new Message();
         Bilty bilty = new Bilty();
 
         bilty.setStatus(codeService.getCodeById(createBiltyDTO.getStatusid()));
@@ -40,20 +56,19 @@ public class BiltyService {
         bilty.setFrom(codeService.getCodeById(createBiltyDTO.getFromid()));
         bilty.setSender(codeService.getCodeById(createBiltyDTO.getSenderid()));
         bilty.setMaterial(codeService.getCodeById(createBiltyDTO.getMaterialid()));
-        bilty.setAdvanceamount(createBiltyDTO.getAdvanceamount());
-        bilty.setContainerno(createBiltyDTO.getContainerno());
-        bilty.setDieselamount(createBiltyDTO.getDieselamount());
-        bilty.setDrivername(createBiltyDTO.getDrivername());
-        bilty.setDrivermobileno(createBiltyDTO.getDrivermobileno());
-        bilty.setMsno(createBiltyDTO.getMsno());
-        bilty.setPono(createBiltyDTO.getPono());
-        bilty.setVehicleno(createBiltyDTO.getVehicleno());
-        bilty.setVerified(false);
+        bilty.setAdvanceAmount(createBiltyDTO.getAdvanceamount());
+        bilty.setContainerNo(createBiltyDTO.getContainerno());
+        bilty.setDieselAmount(createBiltyDTO.getDieselamount());
+        bilty.setDriverName(createBiltyDTO.getDrivername());
+        bilty.setDriverMobileNo(createBiltyDTO.getDrivermobileno());
+        bilty.setMsNo(createBiltyDTO.getMsno());
+        bilty.setPoNo(createBiltyDTO.getPono());
+        bilty.setVehicleNo(createBiltyDTO.getVehicleno());
         bilty.setActiveIndicator(true);
         bilty.setWeight(createBiltyDTO.getWeight());
+        bilty.setDate(createBiltyDTO.getDate());
 
-        message.setData(biltyRepo.save(bilty));
-        return message;
+        return biltyRepo.save(bilty);
 
     }
 

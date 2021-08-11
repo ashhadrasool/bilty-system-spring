@@ -8,62 +8,58 @@ public class Bilty extends BaseEntity  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long biltyid;
-    private String msno;
+    private long biltyId;
+    private String msNo;
 
     @ManyToOne
-    @JoinColumn(name="fromid", referencedColumnName="codeid")
+    @JoinColumn(name="fromId", referencedColumnName="codeId")
     private Code fromCode;
     @ManyToOne
-    @JoinColumn(name="toid", referencedColumnName="codeid")
+    @JoinColumn(name="toId", referencedColumnName="codeId")
     private Code toCode;
     @ManyToOne
-    @JoinColumn(name="senderid", referencedColumnName="codeid")
+    @JoinColumn(name="senderId", referencedColumnName="codeId")
     private Code senderCode;
     @ManyToOne
-    @JoinColumn(name="materialid", referencedColumnName="codeid")
+    @JoinColumn(name="materialId", referencedColumnName="codeId")
     private Code materialCode;
     @ManyToOne
-    @JoinColumn(name="statusid", referencedColumnName="codeid")
+    @JoinColumn(name="statusId", referencedColumnName="codeId")
     private Code statusCode;
-    private String pono;
-    private String containerno;
-    private String vehicleno;
+    private String poNo;
+    private String containerNo;
+    private String vehicleNo;
 
     private float weight;
-    private int dieselamount;
-    private int advanceamount;
-    private String drivername;
-    private String drivermobileno;
-    private boolean verified;
+    private int dieselAmount;
+    private int advanceAmount;
+    private String driverName;
+    private String driverMobileNo;
+
     private Date date;
 
     public long getId() {
-        return biltyid;
+        return biltyId;
     }
 
     public static void setId(Bilty bilty, long biltyid) {
-        bilty.biltyid = biltyid;
+        bilty.biltyId = biltyid;
     }
 
-    public String getDrivername() {
-        return drivername;
+    public String getDriverName() {
+        return driverName;
     }
 
-    public void setDrivername(String drivername) {
-        this.drivername = drivername;
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
     }
 
-    public String getDrivermobileno() {
-        return drivermobileno;
+    public String getDriverMobileNo() {
+        return driverMobileNo;
     }
 
-    public void setDrivermobileno(String drivermobileno) {
-        this.drivermobileno = drivermobileno;
-    }
-
-    public int getDieselamount() {
-        return dieselamount;
+    public void setDriverMobileNo(String driverMobileNo) {
+        this.driverMobileNo = driverMobileNo;
     }
 
     public void setStatus(Code status) {
@@ -74,23 +70,11 @@ public class Bilty extends BaseEntity  {
         return statusCode;
     }
 
-    public boolean isVerified() {
-        return verified;
+    public String getMsNo() {
+        return msNo;
     }
-
-    public void setVerified(boolean verified) {
-        this.verified = verified;
-    }
-
-    public void setDieselamount(int dieselamount) {
-        this.dieselamount = dieselamount;
-    }
-
-    public String getMsno() {
-        return msno;
-    }
-    public void setMsno(String msno) {
-        this.msno = msno;
+    public void setMsNo(String msNo) {
+        this.msNo = msNo;
     }
 
     public Code getFrom() {
@@ -121,25 +105,25 @@ public class Bilty extends BaseEntity  {
         this.materialCode = materialCode;
     }
 
-    public String getPono() {
-        return pono;
+    public String getPoNo() {
+        return poNo;
     }
-    public void setPono(String pono) {
-        this.pono = pono;
-    }
-
-    public String getContainerno() {
-        return containerno;
-    }
-    public void setContainerno(String containerno) {
-        this.containerno = containerno;
+    public void setPoNo(String poNo) {
+        this.poNo = poNo;
     }
 
-    public String getVehicleno() {
-        return vehicleno;
+    public String getContainerNo() {
+        return containerNo;
     }
-    public void setVehicleno(String vehicleno) {
-        this.vehicleno = vehicleno;
+    public void setContainerNo(String containerNo) {
+        this.containerNo = containerNo;
+    }
+
+    public String getVehicleNo() {
+        return vehicleNo;
+    }
+    public void setVehicleNo(String vehicleNo) {
+        this.vehicleNo = vehicleNo;
     }
 
     public float getWeight() {
@@ -150,17 +134,17 @@ public class Bilty extends BaseEntity  {
     }
 
     public int getDieselAmount() {
-        return dieselamount;
+        return dieselAmount;
     }
     public void setDieselAmount(int dieselamount) {
-        this.dieselamount = dieselamount;
+        this.dieselAmount = dieselamount;
     }
 
-    public int getAdvanceamount() {
-        return advanceamount;
+    public int getAdvanceAmount() {
+        return advanceAmount;
     }
-    public void setAdvanceamount(int advanceamount) {
-        this.advanceamount = advanceamount;
+    public void setAdvanceAmount(int advanceAmount) {
+        this.advanceAmount = advanceAmount;
     }
 
     public Date getDate() {

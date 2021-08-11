@@ -2,7 +2,6 @@ package com.enterprises.mengal.biltysystem.service;
 
 import com.enterprises.mengal.biltysystem.model.Code;
 import com.enterprises.mengal.biltysystem.repository.CodeRepo;
-import com.enterprises.mengal.biltysystem.util.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +14,8 @@ public class CodeService {
     @Autowired
     CodeRepo codeRepository;
 
-    public Message<List<Code>> getAllCodesByType(String type){
-        Message message = new Message();
-        message.setData(codeRepository.findAllByType(type));
-        return message;
+    public List<Code> getAllCodesByType(String type){
+        return codeRepository.findAllByType(type);
     }
 
     public Code getCodeById(long id){
@@ -26,15 +23,11 @@ public class CodeService {
         return c.get();
     }
 
-    public Message<List<Code>> getAllCodes(){
-        Message message = new Message();
-        message.setData(codeRepository.findAll());
-        return message;
+    public List<Code> getAllCodes(){
+        return codeRepository.findAll();
     }
 
-    public Message<Code> create(Code code){
-        Message message = new Message();
-        message.setData(codeRepository.save(code));
-        return message;
+    public Code create(Code code){
+        return codeRepository.save(code);
     }
 }

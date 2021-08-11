@@ -2,7 +2,6 @@ package com.enterprises.mengal.biltysystem.controller;
 
 import com.enterprises.mengal.biltysystem.model.Code;
 import com.enterprises.mengal.biltysystem.service.CodeService;
-import com.enterprises.mengal.biltysystem.util.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +21,19 @@ public class CodeController {
     CodeService codeService;
 
     @GetMapping("/all")
-    public Message<List<Code>> getAllCodes(){
+    public List<Code> getAllCodes(){
         log.debug("inside::getAllCodes");
         return codeService.getAllCodes();
     }
 
     @GetMapping("/allByType")
-    public Message<List<Code>> getAllCodes(@Valid @RequestParam String type){
+    public List<Code> getAllCodes(@Valid @RequestParam String type){
         log.debug("inside::getAllCodesByType");
         return codeService.getAllCodesByType(type);
     }
 
     @PostMapping("/create")
-    public Message<Code> create(@Valid @RequestBody Code code){
+    public Code create(@Valid @RequestBody Code code){
         return codeService.create(code);
     }
 

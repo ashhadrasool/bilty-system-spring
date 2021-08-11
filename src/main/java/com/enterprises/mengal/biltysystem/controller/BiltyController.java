@@ -2,18 +2,16 @@ package com.enterprises.mengal.biltysystem.controller;
 
 import com.enterprises.mengal.biltysystem.dto.bilty.CreateBiltyDTO;
 import com.enterprises.mengal.biltysystem.model.Bilty;
-import com.enterprises.mengal.biltysystem.model.Code;
 import com.enterprises.mengal.biltysystem.service.BiltyService;
-import com.enterprises.mengal.biltysystem.service.CodeService;
-import com.enterprises.mengal.biltysystem.util.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin
@@ -27,21 +25,28 @@ public class BiltyController {
     private BiltyService biltyService;
 
 
-    @GetMapping("/all")
-    public Message<List<Bilty>> getAllBiltyReceipts(){
+    @GetMapping("/all" )
+    public Page<Bilty> getAllBiltyReceipts(Pageable pageable){
         log.debug("inside::getAllBiltyList");
-        return biltyService.getAllBiltyEntries();
+        return biltyService.getAll(pageable);
 
     }
 
-    @GetMapping("/aa/{id}")
-    public Message<List<Bilty>> getBilty(@PathVariable("id") long id){
+    @GetMapping("/allwithindates" )
+    public List<Bilty> getBiltyListBetweenDates(@RequestParam("startdate") String startDate, @RequestParam("enddate") String endDate){
         log.debug("inside::getAllBiltyList");
-        return biltyService.getAllBiltyEntries(id);
+        return biltyService.getAllBetweenDates(startDate, endDate);
+
+    }
+
+    @GetMapping("/{id}")
+    public Bilty getBilty(@PathVariable("id") long id){
+        log.debug("inside::getAllBiltyList");
+        return biltyService.getBiltyById(id);
     }
 
     @PostMapping("/create")
-    public Message<Bilty> createBilty(@Valid @RequestBody CreateBiltyDTO createBiltyDTO){
+    public Bilty createBilty(@Valid @RequestBody CreateBiltyDTO createBiltyDTO){
 
         log.debug("inside::getAllBiltyList");
         return biltyService.create(createBiltyDTO);
