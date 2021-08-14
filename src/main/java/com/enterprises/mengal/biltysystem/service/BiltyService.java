@@ -1,12 +1,17 @@
 package com.enterprises.mengal.biltysystem.service;
 
+import com.enterprises.mengal.biltysystem.dto.bilty.BiltySearchDTO;
 import com.enterprises.mengal.biltysystem.dto.bilty.CreateBiltyDTO;
 import com.enterprises.mengal.biltysystem.model.Bilty;
+import com.enterprises.mengal.biltysystem.model.QBilty;
 import com.enterprises.mengal.biltysystem.repository.BiltyRepo;
+import com.enterprises.mengal.biltysystem.repository.predicatee.BiltyPredicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.BooleanExpression;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,11 +29,9 @@ public class BiltyService {
     @Autowired
     private CodeService codeService;
 
-    public Page<Bilty> getAll(Pageable pageable){
-//        QBilty bilty = QBilty.customer;
-//        BooleanExpression customerHasBirthday = customer.birthday.eq(today);
-//        biltyRepo.findAll(customerHasBirthday.and(isLongTermCustomer));
-        return biltyRepo.findAll(pageable);
+    public Page<Bilty> getAll(BiltySearchDTO biltySearchDTO, Pageable pageable){
+        BiltyPredicate biltyPredicate = new BiltyPredicate(biltySearchDTO);
+        return biltyRepo.findAll(biltyPredicate.getPredicate(), pageable);
     }
 
     public List<Bilty> getAllBetweenDates(String startDate, String endDate){
@@ -70,7 +73,7 @@ public class BiltyService {
         bilty.setMsNo(createBiltyDTO.getMsNo());
         bilty.setPoNo(createBiltyDTO.getPoNo());
         bilty.setVehicleNo(createBiltyDTO.getVehicleNo());
-        bilty.setActiveIndicator(true);
+        //bilty.setActiveIndicator(true);
         bilty.setWeight(createBiltyDTO.getWeight());
         bilty.setDate(createBiltyDTO.getDate());
 

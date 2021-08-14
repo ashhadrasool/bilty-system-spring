@@ -7,7 +7,8 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
-public class Bilty extends BaseEntity  {
+public class Bilty //extends BaseEntity
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

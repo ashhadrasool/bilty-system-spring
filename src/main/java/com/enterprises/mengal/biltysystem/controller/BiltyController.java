@@ -1,5 +1,6 @@
 package com.enterprises.mengal.biltysystem.controller;
 
+import com.enterprises.mengal.biltysystem.dto.bilty.BiltySearchDTO;
 import com.enterprises.mengal.biltysystem.dto.bilty.CreateBiltyDTO;
 import com.enterprises.mengal.biltysystem.model.Bilty;
 import com.enterprises.mengal.biltysystem.service.BiltyService;
@@ -8,12 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.web.bind.annotation.*;
+import com.querydsl.core.types.Predicate;
 
 import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
-
 @CrossOrigin
 @RestController
 @RequestMapping("/api/bilty")
@@ -26,10 +28,11 @@ public class BiltyController {
 
 
     @GetMapping("/all" )
-    public Page<Bilty> getAllBiltyReceipts(Pageable pageable){
+    public Page<Bilty> getAllBiltyReceipts(
+            BiltySearchDTO biltySearchDTO,
+            Pageable pageable){
         log.debug("inside::getAllBiltyList");
-        return biltyService.getAll(pageable);
-
+        return biltyService.getAll(biltySearchDTO, pageable);
     }
 
     @GetMapping("/allwithindates" )

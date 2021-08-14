@@ -4,8 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
-public class BaseEntity {
+public class BaseEntity{
 
     protected boolean activeIndicator = true;
 
