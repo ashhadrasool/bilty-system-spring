@@ -22,6 +22,7 @@ public class BiltyPredicate {
         updateForMaterialId();
         updateForWeight();
         updateForVehicleNo();
+        updateForStatusId();
         return query;
     }
 
@@ -40,6 +41,10 @@ public class BiltyPredicate {
     void updateForSenderId(){
         query = biltySearchDTO.getSenderId()==null? query:
                 query.and(bilty.senderCode.codeid.eq(biltySearchDTO.getSenderId()));
+    }
+    void updateForStatusId(){
+        query = biltySearchDTO.getStatusId()==null? query:
+                query.and(bilty.statusCode.codeid.eq(biltySearchDTO.getStatusId()));
     }
     void updateForMaterialId(){
         query = biltySearchDTO.getMaterialId()==null? query:
