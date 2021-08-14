@@ -47,7 +47,6 @@ public class BiltyController {
 
     @PostMapping("/create")
     public Bilty createBilty(@Valid @RequestBody CreateBiltyDTO createBiltyDTO){
-
         log.debug("inside::getAllBiltyList");
         return biltyService.create(createBiltyDTO);
     }

@@ -11,10 +11,9 @@ import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
+
 
 @Service
 public class BiltyService {
@@ -26,6 +25,9 @@ public class BiltyService {
     private CodeService codeService;
 
     public Page<Bilty> getAll(Pageable pageable){
+//        QBilty bilty = QBilty.customer;
+//        BooleanExpression customerHasBirthday = customer.birthday.eq(today);
+//        biltyRepo.findAll(customerHasBirthday.and(isLongTermCustomer));
         return biltyRepo.findAll(pageable);
     }
 
@@ -33,10 +35,14 @@ public class BiltyService {
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            Date sdate = formatter.parse(startDate);
-            Date edate = formatter.parse(endDate);
+//            Date sdate = formatter.parse(startDate);
+//            Date edate = formatter.parse(endDate);
+
+            LocalDate sdate = LocalDate.parse(startDate);
+            LocalDate edate = LocalDate.parse(endDate);
+
             return biltyRepo.findByDateGreaterThanEqualAndDateLessThanEqual(sdate, edate);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -51,19 +57,19 @@ public class BiltyService {
         //b.setVerified(false);
         Bilty bilty = new Bilty();
 
-        bilty.setStatus(codeService.getCodeById(createBiltyDTO.getStatusid()));
-        bilty.setTo(codeService.getCodeById(createBiltyDTO.getToid()));
-        bilty.setFrom(codeService.getCodeById(createBiltyDTO.getFromid()));
-        bilty.setSender(codeService.getCodeById(createBiltyDTO.getSenderid()));
-        bilty.setMaterial(codeService.getCodeById(createBiltyDTO.getMaterialid()));
-        bilty.setAdvanceAmount(createBiltyDTO.getAdvanceamount());
-        bilty.setContainerNo(createBiltyDTO.getContainerno());
-        bilty.setDieselAmount(createBiltyDTO.getDieselamount());
-        bilty.setDriverName(createBiltyDTO.getDrivername());
-        bilty.setDriverMobileNo(createBiltyDTO.getDrivermobileno());
-        bilty.setMsNo(createBiltyDTO.getMsno());
-        bilty.setPoNo(createBiltyDTO.getPono());
-        bilty.setVehicleNo(createBiltyDTO.getVehicleno());
+        bilty.setStatus(codeService.getCodeById(createBiltyDTO.getStatusId()));
+        bilty.setTo(codeService.getCodeById(createBiltyDTO.getToId()));
+        bilty.setFrom(codeService.getCodeById(createBiltyDTO.getFromId()));
+        bilty.setSender(codeService.getCodeById(createBiltyDTO.getSenderId()));
+        bilty.setMaterial(codeService.getCodeById(createBiltyDTO.getMaterialId()));
+        bilty.setAdvanceAmount(createBiltyDTO.getAdvanceAmount());
+        bilty.setContainerNo(createBiltyDTO.getContainerNo());
+        bilty.setDieselAmount(createBiltyDTO.getDieselAmount());
+        bilty.setDriverName(createBiltyDTO.getDriverName());
+        bilty.setDriverMobileNo(createBiltyDTO.getDriverMobileNo());
+        bilty.setMsNo(createBiltyDTO.getMsNo());
+        bilty.setPoNo(createBiltyDTO.getPoNo());
+        bilty.setVehicleNo(createBiltyDTO.getVehicleNo());
         bilty.setActiveIndicator(true);
         bilty.setWeight(createBiltyDTO.getWeight());
         bilty.setDate(createBiltyDTO.getDate());

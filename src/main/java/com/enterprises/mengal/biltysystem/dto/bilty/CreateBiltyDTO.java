@@ -1,114 +1,113 @@
 package com.enterprises.mengal.biltysystem.dto.bilty;
 
-import com.enterprises.mengal.biltysystem.model.Bilty;
-import com.enterprises.mengal.biltysystem.model.Code;
-
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class CreateBiltyDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long biltyid;
-    private String msno;
+    private long biltyId;
+    private String msNo;
 
-    private long fromid;
-    private long toid;
-    private long senderid;
-    private long materialid;
-    private long statusid;
+    private long fromId;
+    private long toId;
+    private long senderId;
+    private long materialId;
+    private long statusId;
 
-    private String pono;
-    private String containerno;
-    private String vehicleno;
+    private String poNo;
+    private String containerNo;
+    private String vehicleNo;
 
     private float weight;
-    private int dieselamount;
-    private int advanceamount;
-    private String drivername;
-    private String drivermobileno;
-    private boolean verified;
-    private Date date;
+    private int dieselAmount;
+    private int advanceAmount;
+    private String driverName;
+    private String driverMobileNo;
+    private LocalDate date;
 
-    public long getBiltyid() {
-        return biltyid;
+
+
+    public long getBiltyId() {
+        return biltyId;
     }
 
-    public void setBiltyid(long biltyid) {
-        this.biltyid = biltyid;
+    public void setBiltyId(long biltyId) {
+        this.biltyId = biltyId;
     }
 
-    public String getMsno() {
-        return msno;
+    public String getMsNo() {
+        return msNo;
     }
 
-    public void setMsno(String msno) {
-        this.msno = msno;
+    public void setMsNo(String msNo) {
+        this.msNo = msNo;
     }
 
-    public long getFromid() {
-        return fromid;
+    public long getFromId() {
+        return fromId;
     }
 
-    public void setFromid(long fromid) {
-        this.fromid = fromid;
+    public void setFromId(long fromId) {
+        this.fromId = fromId;
     }
 
-    public long getToid() {
-        return toid;
+    public long getToId() {
+        return toId;
     }
 
-    public void setToid(long toid) {
-        this.toid = toid;
+    public void setToId(long toId) {
+        this.toId = toId;
     }
 
-    public long getSenderid() {
-        return senderid;
+    public long getSenderId() {
+        return senderId;
     }
 
-    public void setSenderid(long senderid) {
-        this.senderid = senderid;
+    public void setSenderId(long senderId) {
+        this.senderId = senderId;
     }
 
-    public long getMaterialid() {
-        return materialid;
+    public long getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterialid(long materialid) {
-        this.materialid = materialid;
+    public void setMaterialId(long materialId) {
+        this.materialId = materialId;
     }
 
-    public long getStatusid() {
-        return statusid;
+    public long getStatusId() {
+        return statusId;
     }
 
-    public void setStatusid(long statusid) {
-        this.statusid = statusid;
+    public void setStatusId(long statusId) {
+        this.statusId = statusId;
     }
 
-    public String getPono() {
-        return pono;
+    public String getPoNo() {
+        return poNo;
     }
 
-    public void setPono(String pono) {
-        this.pono = pono;
+    public void setPoNo(String poNo) {
+        this.poNo = poNo;
     }
 
-    public String getContainerno() {
-        return containerno;
+    public String getContainerNo() {
+        return containerNo;
     }
 
-    public void setContainerno(String containerno) {
-        this.containerno = containerno;
+    public void setContainerNo(String containerNo) {
+        this.containerNo = containerNo;
     }
 
-    public String getVehicleno() {
-        return vehicleno;
+    public String getVehicleNo() {
+        return vehicleNo;
     }
 
-    public void setVehicleno(String vehicleno) {
-        this.vehicleno = vehicleno;
+    public void setVehicleNo(String vehicleNo) {
+        this.vehicleNo = vehicleNo;
     }
 
     public float getWeight() {
@@ -119,51 +118,43 @@ public class CreateBiltyDTO {
         this.weight = weight;
     }
 
-    public int getDieselamount() {
-        return dieselamount;
+    public int getDieselAmount() {
+        return dieselAmount;
     }
 
-    public void setDieselamount(int dieselamount) {
-        this.dieselamount = dieselamount;
+    public void setDieselAmount(int dieselAmount) {
+        this.dieselAmount = dieselAmount;
     }
 
-    public int getAdvanceamount() {
-        return advanceamount;
+    public int getAdvanceAmount() {
+        return advanceAmount;
     }
 
-    public void setAdvanceamount(int advanceamount) {
-        this.advanceamount = advanceamount;
+    public void setAdvanceAmount(int advanceAmount) {
+        this.advanceAmount = advanceAmount;
     }
 
-    public String getDrivername() {
-        return drivername;
+    public String getDriverName() {
+        return driverName;
     }
 
-    public void setDrivername(String drivername) {
-        this.drivername = drivername;
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
     }
 
-    public String getDrivermobileno() {
-        return drivermobileno;
+    public String getDriverMobileNo() {
+        return driverMobileNo;
     }
 
-    public void setDrivermobileno(String drivermobileno) {
-        this.drivermobileno = drivermobileno;
+    public void setDriverMobileNo(String driverMobileNo) {
+        this.driverMobileNo = driverMobileNo;
     }
 
-    public boolean isVerified() {
-        return verified;
-    }
-
-    public void setVerified(boolean verified) {
-        this.verified = verified;
-    }
-
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

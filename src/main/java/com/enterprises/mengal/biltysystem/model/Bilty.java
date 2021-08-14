@@ -1,6 +1,9 @@
 package com.enterprises.mengal.biltysystem.model;
 
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -36,13 +39,13 @@ public class Bilty extends BaseEntity  {
     private String driverName;
     private String driverMobileNo;
 
-    private Date date;
+    private LocalDate date;
 
-    public long getId() {
+    public long getBiltyId() {
         return biltyId;
     }
 
-    public static void setId(Bilty bilty, long biltyid) {
+    public static void setBiltyId(Bilty bilty, long biltyid) {
         bilty.biltyId = biltyid;
     }
 
@@ -147,11 +150,11 @@ public class Bilty extends BaseEntity  {
         this.advanceAmount = advanceAmount;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }
