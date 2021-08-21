@@ -23,7 +23,7 @@ public class QPaymentFile extends EntityPathBase<PaymentFile> {
 
     public final StringPath md5Hash = createString("md5Hash");
 
-    public final NumberPath<Integer> paymentFileId = createNumber("paymentFileId", Integer.class);
+    public final NumberPath<Long> paymentFileId = createNumber("paymentFileId", Long.class);
 
     public QPaymentFile(String variable) {
         super(PaymentFile.class, forVariable(variable));

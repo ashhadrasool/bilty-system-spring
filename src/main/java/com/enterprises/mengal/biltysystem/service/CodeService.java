@@ -23,6 +23,11 @@ public class CodeService {
         return c.get();
     }
 
+    public Code getCodeByDescription(String description){
+        Optional<Code> c=  codeRepository.getOneByDescription(description);
+        return c.get();
+    }
+
     public List<Code> getAllCodes(){
         return codeRepository.findAll();
     }

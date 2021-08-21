@@ -8,21 +8,23 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 @NoArgsConstructor
 @Data
-public class BiltyXlsx {
+public class PaymentEntry {
 
     @Id
     @GeneratedValue
-    private long BiltyXlsxId;
-    private long biltyId;
-    private long paymentFileId;
+    private Long paymentEntryId;
+    private Integer paymentEntryFileIndex;
+    @ManyToOne
+    @JoinColumn(name="biltyId", referencedColumnName="biltyId")
+    private Bilty bilty;
+
+    private Long paymentFileId;
 
     private String vehicleNo;
     private float weight;
     private LocalDate date;
 
-    public long getBiltyId() {
-        return biltyId;
-    }
 }

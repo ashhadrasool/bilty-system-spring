@@ -10,4 +10,5 @@ import java.util.List;
 public interface PaymentFileRepo extends JpaRepository<PaymentFile, Long> {
 
     boolean existsByMd5Hash(String md5Hash);
+    PaymentFile findByMd5Hash(String md5Hash);
 }
