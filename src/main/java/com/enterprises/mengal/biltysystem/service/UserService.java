@@ -60,6 +60,7 @@ public class UserService {
         return new JwtResponse(jwt,
                 userDetails.getUserId(),
                 userDetails.getEmail(),
+                userDetails.getImageUrl(),
                 roles);
     }
 
